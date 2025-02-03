@@ -1,0 +1,66 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "inc",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "myVal",
+				"outputs": [
+					{
+						"internalType": "uint8",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/education_sol/2_second.sol": "sec"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/education_sol/2_second.sol": {
+			"keccak256": "0x707b5435f7703f4366ea0dca07c37d45b2c369803e32757afbbc17eb2e16d1b9",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://d98b82a542ac65e0f4cbfcb7ac8189e692665b5cc67d8fa816caab34d1863e66",
+				"dweb:/ipfs/QmeD8K8mxgB7GpiHzitDbTXyxwnpx8kg8sjdkPU9gX5QKK"
+			]
+		}
+	},
+	"version": 1
+}
