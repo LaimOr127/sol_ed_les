@@ -40,6 +40,31 @@ describe("Payments", function () {
     console.log(newPaymnt)
     expect(newPaymnt.message).to.eq(msg)
     expect(newPaymnt.amount).to.eq(sum)
-    expect(newPaymnt.from).to.eq(acc2.address)
-  })
-})
+      expect(newPaymnt.from).to.eq(acc2.address)
+    })
+  
+    it("should emit PaymentSent event when paying", async function () {
+      const sum = ethers.parseEther("0.5"); // 0.5 ETH
+      const msgText = "test payment";
+  
+      console.log(`Отправка ${sum} wei с сообщением: "${msgText}" от ${acc2.address}`);
+      
+      const tx = await payments.connect(acc2).pay(msgText, { value: sum });
+      const receipt = await tx.wait();
+      console.log("Логи события:", receipt.logs);
+  
+      // Проверяем, что сгенерировано событие PaymentSent с указанными аргументами
+      await expect(tx)
+        .to.emit(payments, "PaymentSent")
+        .withArgs(acc2.address, sum, msgText);
+    });
+  
+    it("should fail when trying to send zero payment", async function () {
+      console.log("Попытка отправить 0 wei (ожидается ошибка)...");
+      
+      // Проверяем, что транзакция откатится с нужным сообщением об ошибке
+      await expect(
+        payments.connect(acc2).pay("empty payment", { value: 0 })
+      ).to.be.revertedWith("Payment must be greater than zero");
+    });
+  });
