@@ -11,7 +11,7 @@ class Transaction {
             throw new Error("Transaction has already been executed!");
         }
 
-        for (const utxo of this.inputUTXOs) {
+        for (const utxo of this.inputUTXOs) {//проверка на повторное выполнение
             if (utxo.spent) {
                 throw new Error("Attempted to double-spend a TXO!");
             }
@@ -27,11 +27,11 @@ class Transaction {
         this.fee = totalInput - totalOutput;//рассчет комиссии
 
         for (const utxo of this.inputUTXOs) {
-            utxo.spend();
+            utxo.spend();//потраение
         }
 
         this.executed = true;
     }
 }
 
-module.exports = Transaction;
+module.exports = Transaction;//передаем класс Transaction

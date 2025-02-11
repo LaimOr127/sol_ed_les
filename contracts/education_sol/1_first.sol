@@ -8,17 +8,17 @@ contract MyShop {
     address public owner;
     mapping (address => uint) public payments;
 
-    constructor() {
+    constructor() {//конструктор для инициализации
         owner = msg.sender;
     }
 
     function payForItem() public payable {
-        payments[msg.sender] = msg.value;
+        payments[msg.sender] = msg.value;// msg.value - сколько отправил
     }
 
     function withdrawAll() public {
         address payable _to = payable(owner);
         address _thisContract = address(this);
-        _to.transfer(_thisContract.balance);
+        _to.transfer(_thisContract.balance);// _thisContract.balance - сколько на контракте
     }
 }

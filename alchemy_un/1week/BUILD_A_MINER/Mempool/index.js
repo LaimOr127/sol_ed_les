@@ -17,7 +17,7 @@ function mine() {
 
     do {//хеш должен стать < сложности
         block = {
-            id: blocks.length,
+            id: blocks.length,// id блока
             transactions,
             nonce
         };

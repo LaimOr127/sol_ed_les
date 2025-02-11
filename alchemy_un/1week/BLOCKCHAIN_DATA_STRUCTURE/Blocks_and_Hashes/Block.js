@@ -5,8 +5,8 @@ class Block {
         this.data = data;
     }
 
-    toHash() {
-        return SHA256(this.data).toString();
+    toHash() {//создаем хэш
+        return SHA256(this.data).toString();//хэшируем данные
     }
 }
 

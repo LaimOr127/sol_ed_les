@@ -14,14 +14,14 @@ contract Demo{
         payments[msg.sender] = msg.value;
     }
     //так можно перевлдить деньги на указанные адреса
-    function transfetTo(address targetAddr, uint amount) public {
+    function transfetTo(address targetAddr, uint amount) public {//функция для перевода
         address payable _to = payable(targetAddr);
         _to.transfer(amount);
     }
 
 
-    function getBalance(address targetAddr) public view returns(uint){
-        return targetAddr.balance;
+    function getBalance(address targetAddr) public view returns(uint){//функция для получения баланса
+        return targetAddr.balance;//возвращает баланс
 
     }
 
@@ -29,9 +29,9 @@ contract Demo{
     string public myStr = "test"; //storage то есть в блокчейне
 
     function demo(string memory newValueStr) public {
-        string memory myTempStr = "temp";
+        string memory myTempStr = "temp";//строка в памяти
         //newValueStr[0]// так делать нельзя
 
-        myStr = newValueStr;
+        myStr = newValueStr;// storage
     }
 }

@@ -3,10 +3,10 @@ const TARGET_DIFFICULTY = BigInt(0x0ffffffffffffffffffffffffffffffffffffffffffff
 const MAX_TRANSACTIONS = 10;
 
 const mempool = [];
-const blocks = [];
+const blocks = [];//массив блоков
 
 function addTransaction(transaction) {
-    mempool.push(transaction);
+    mempool.push(transaction);//(transaction --> mempool)
 }
 
 function mine() {
@@ -22,7 +22,7 @@ function mine() {
             nonce
         };
 
-        hash = SHA256(JSON.stringify(block)).toString();
+        hash = SHA256(JSON.stringify(block)).toString();//хешируем блок
         nonce++;
     } while (BigInt(`0x${hash}`) >= TARGET_DIFFICULTY);
 

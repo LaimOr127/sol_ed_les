@@ -5,11 +5,11 @@ const MAX_TRANSACTIONS = 10;
 const mempool = [];
 const blocks = [];
 
-function addTransaction(transaction) {
+function addTransaction(transaction) {//(transaction --> mempool)
     mempool.push(transaction);
 }
 
-function mine() {
+function mine() {//(mempool --> blocks)
     const transactions = mempool.splice(0, MAX_TRANSACTIONS);//(Max_Tra... --> mempool)
     let nonce = 0;
     let hash;
@@ -22,16 +22,16 @@ function mine() {
             nonce
         };
 
-        hash = SHA256(JSON.stringify(block)).toString();
-        nonce++;
-    } while (BigInt(`0x${hash}`) >= TARGET_DIFFICULTY);
+        hash = SHA256(JSON.stringify(block)).toString();//хешируем блок
+        nonce++;//увеличиваем число
+    } while (BigInt(`0x${hash}`) >= TARGET_DIFFICULTY);//пока хеш больше сложности
 
     block.hash = hash;//обновили хеш
 
     blocks.push(block);// push используется в динамическим
 }
 
-module.exports = {
+module.exports = {//экспортируем
     TARGET_DIFFICULTY,
     MAX_TRANSACTIONS,
     addTransaction,

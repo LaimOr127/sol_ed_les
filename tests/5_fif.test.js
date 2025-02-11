@@ -7,26 +7,26 @@ describe("Payments", function () {
   let payments;
 
   beforeEach(async function(){
-    [acc1, acc2] = await ethers.getSigners();
+    [acc1, acc2] = await ethers.getSigners();//получаем адреса
     const Payments = await ethers.getContractFactory("Payments", acc1);
     payments = await Payments.deploy()
-    await payments.deployed()
+    await payments.deployed()//разворачиваем контракт
     console.log(payments.address)
   })
 
-  it("should ne deployed", async function () {
+  it("should ne deployed", async function () {//проверка на то что контракт развернут
     expect(payments.address).to.be.properAddress
   })
 
-  it ("should have 0 ether by default", async function(){
+  it ("should have 0 ether by default", async function(){//проверка на то что контракт развернут
     const balance =await  payments.currentBalance
     expecr(balance).to.eq(0)
   })
 
-  it("should be possible to send funds", async function () {
+  it("should be possible to send funds", async function () {//проверка на то что контракт развернут
     const sum = 100
     const msg = "hello from hardhat"
-    const tx = payments.connect*(acc2).pay ("hello from hardhat", {value: sum})
+    const tx = payments.connect*(acc2).pay ("hello from hardhat", {value: sum})//отправляем деньги
 
     await expect(() => tx)//анонимная функция
       .to.changeEtherBalance([acc2, payments], [-sum, sum])
@@ -34,7 +34,7 @@ describe("Payments", function () {
     await tx.wait()
 
     const balance =await  payments.currentBalance
-    console.log(balance)
+    console.log(balance)//выводим баланс
 
     const newPaymnt =await payments.getPayment(acc2.address, 0) //вызов, не транзакция
     console.log(newPaymnt)
@@ -53,18 +53,16 @@ describe("Payments", function () {
       const receipt = await tx.wait();
       console.log("Логи события:", receipt.logs);
   
-      // Проверяем, что сгенерировано событие PaymentSent с указанными аргументами
-      await expect(tx)
+      await expect(tx)//проверяем, что транзакция выполнена без ошибок
         .to.emit(payments, "PaymentSent")
         .withArgs(acc2.address, sum, msgText);
     });
   
-    it("should fail when trying to send zero payment", async function () {
+    it("should fail when trying to send zero payment", async function () {// проверка на то что контракт развернут
       console.log("Попытка отправить 0 wei (ожидается ошибка)...");
       
-      // Проверяем, что транзакция откатится с нужным сообщением об ошибке
       await expect(
-        payments.connect(acc2).pay("empty payment", { value: 0 })
+        payments.connect(acc2).pay("empty payment", { value: 0 })//отправляем деньги
       ).to.be.revertedWith("Payment must be greater than zero");
     });
   });

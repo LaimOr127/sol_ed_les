@@ -7,19 +7,19 @@ describe('TXO', function () {
     const txo = new TXO(address, amount);
 
     describe('constructor', () => {
-        it('should set the owner', () => {
+        it('should set the owner', () => {//проверяем, что владелец равен адресу
             assert.equal(txo.owner, address);
         });
-        it('should set the amount', () => {
+        it('should set the amount', () => {//проверяем, что сумма равна 10
             assert.equal(txo.amount, amount);
         });
-        it('should set spent to false', () => {
-            assert.equal(txo.spent, false);
+        it('should set spent to false', () => {//проверяем, что txo не потраен
+            assert.equal(txo.spent, false);//проверяем, что txo не потраен
         });
     });
 
     describe('spend', () => {
-        it('should set spent to true', () => {
+        it('should set spent to true', () => {//проверяем, что txo потраен
             txo.spend();
             assert.equal(txo.spent, true);
         });

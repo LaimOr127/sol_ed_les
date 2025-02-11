@@ -6,7 +6,7 @@ describe('mine', () => {
     describe('with 5 mempool transactions', () => {
         before(() => {
             for(let i = 0; i < 5; i++) {
-                addTransaction({ sender: 'bob', to: 'alice' });
+                addTransaction({ sender: 'bob', to: 'alice' });//сендер --> ресивер
             }
         });
         describe('after mining', () => {
@@ -17,9 +17,9 @@ describe('mine', () => {
                 assert.equal(blocks.length, 1);
             });
             it('should store the transactions on the block', () => {
-                assert.equal(blocks[blocks.length - 1].transactions.length, 5);
+                assert.equal(blocks[blocks.length - 1].transactions.length, 5);//проверяем, что транзакции сохранены в блоке
             });
-            it('should clear the mempool', () => {
+            it('should clear the mempool', () => {//проверяем, что mempool очищен
                 assert.equal(mempool.length, 0);
             });
         });
@@ -30,7 +30,7 @@ describe('mine', () => {
                 addTransaction({ sender: 'bob', to: 'alice' });
             }
         });
-        describe('after mining', () => {
+        describe('after mining', () => {//проверяем, что блок добавлен
             before(() => {
                 mine();
             });

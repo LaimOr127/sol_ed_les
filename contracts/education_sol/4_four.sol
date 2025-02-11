@@ -5,13 +5,13 @@ pragma solidity >=0.8.2 <0.9.0;
 contract Demo {
     // Enum
     enum Status { Paid, Delivered, Received }
-    Status public currentStatus;
+    Status public currentStatus;// storage
 
-    function paid() public {
+    function paid() public {//функция для оплаты
         currentStatus = Status.Paid;
     }
 
-    function delivered() public {
+    function delivered() public {//функция для доставки
         currentStatus = Status.Delivered;
     }
 
@@ -31,7 +31,7 @@ contract Demo {
     uint public len;
     function dynArr() public {
         items.push(4);
-        items.push(5);
+        items.push(5);// пуш добавляет в конец
         len = items.length;
     }
 

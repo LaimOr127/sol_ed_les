@@ -30,7 +30,7 @@ class Transaction {
             utxo.spend();
         }
 
-        this.executed = true;
+        this.executed = true;//транзакция выполнена
     }
 }
 

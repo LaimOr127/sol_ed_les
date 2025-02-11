@@ -1,5 +1,5 @@
 const { assert } = require('chai');
-const Transaction = require('../Transaction');
+const Transaction = require('../Transaction');//создаем транзакцию
 const TXO = require('../TXO');
 
 describe('Transaction', function () {
@@ -12,8 +12,8 @@ describe('Transaction', function () {
         const outputTXO1 = new TXO(toAddress, 10);
         const tx = new Transaction([txo1, txo2], [outputTXO1]);
 
-        it('should execute without error', () => {
-            try {
+        it('should execute without error', () => {//проверяем, что транзакция выполнена без ошибок
+            try {//пытаемся выполнить транзакцию
                 tx.execute();
             }
             catch (ex) {
@@ -23,15 +23,15 @@ describe('Transaction', function () {
         });
     });
 
-    describe('with insufficient UTXOs', () => {
+    describe('with insufficient UTXOs', () => {//проверяем, что транзакция выполнена без ошибок
         const txo1 = new TXO(fromAddress, 3);
         const txo2 = new TXO(fromAddress, 3);
-        const txo3 = new TXO(fromAddress, 3);
+        const txo3 = new TXO(fromAddress, 3);//создаем входящий TXO
         const outputTXO1 = new TXO(toAddress, 10);
 
         const tx = new Transaction([txo1, txo2, txo3], [outputTXO1]);
 
-        it('should throw an error on execute', () => {
+        it('should throw an error on execute', () => {//проверяем, что транзакция выполнена без ошибок
             let ex;
             try {
                 tx.execute();
@@ -39,7 +39,7 @@ describe('Transaction', function () {
             catch (_ex) {
                 ex = _ex;
             }
-            assert(ex, "Did not throw an exception for a lack of UTXO funds!");
+            assert(ex, "Did not throw an exception for a lack of UTXO funds!");//проверяем, что транзакция выполнена без ошибок
         });
     });
 });

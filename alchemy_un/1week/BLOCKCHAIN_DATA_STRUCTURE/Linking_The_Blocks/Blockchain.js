@@ -2,7 +2,7 @@ const Block = require('./Block');
 
 class Blockchain {
     constructor() {
-        const genesisBlock = new Block("Gen Block");
+        const genesisBlock = new Block("Gen Block");//создаем блок
         this.chain = [genesisBlock];
     }
 

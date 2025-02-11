@@ -17,8 +17,8 @@ class Transaction {
             }
         }
 
-        const totalInput = this.inputUTXOs.reduce((sum, utxo) => sum + utxo.amount, 0);
-        const totalOutput = this.outputUTXOs.reduce((sum, utxo) => sum + utxo.amount, 0);
+        const totalInput = this.inputUTXOs.reduce((sum, utxo) => sum + utxo.amount, 0);//рассчет суммы входных
+        const totalOutput = this.outputUTXOs.reduce((sum, utxo) => sum + utxo.amount, 0);//рассчет суммы выходных
 
         if (totalInput < totalOutput) {
             throw new Error("Insufficient UTXO funds!");

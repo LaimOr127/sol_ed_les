@@ -3,8 +3,8 @@ const Transaction = require('../Transaction');
 const TXO = require('../TXO');
 
 describe('Transaction', function () {
-    const fromAddress = "1DBS97W3jWw6FnAqdduK1NW6kFo3Aid1N6";
-    const toAddress = "12ruWjb4naCME5QhjrQSJuS5disgME22fe";
+    const fromAddress = "1DBS97W3jWw6FnAqdduK1NW6kFo3Aid1N6";//адрес отправителя
+    const toAddress = "12ruWjb4naCME5QhjrQSJuS5disgME22fe";//адрес получателя
 
     describe('with no remainder', () => {
         const txo1 = new TXO(fromAddress, 5);
@@ -12,11 +12,11 @@ describe('Transaction', function () {
         const outputTXO1 = new TXO(toAddress, 7);
         const outputTXO2 = new TXO(fromAddress, 3);
 
-        const tx = new Transaction([txo1, txo2], [outputTXO1, outputTXO2]);
+        const tx = new Transaction([txo1, txo2], [outputTXO1, outputTXO2]);//создаем транзакцию
 
         tx.execute();
 
-        it('should have zero fee', () => {
+        it('should have zero fee', () => {//проверяем, что комиссия равна 0
             assert.equal(tx.fee, 0);
         });
     });
@@ -30,7 +30,7 @@ describe('Transaction', function () {
 
         tx.execute();
 
-        it('should have the remainder as the fee', () => {
+        it('should have the remainder as the fee', () => {//проверяем, что комиссия равна 2
             assert.equal(tx.fee, 2);
         });
     });

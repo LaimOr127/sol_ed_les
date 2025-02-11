@@ -1,5 +1,7 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+// SPDX-License-Identifier: GPL-3.0
+
+pragma solidity >=0.8.2 <0.9.0;
+
 contract Demo {
 		// SCOPES:
     // public
@@ -18,7 +20,7 @@ contract Demo {
         balance += msg.value;
     }
     // transaction
-    function setMessage(string memory newMessage) external returns(string memory) {
+    function setMessage(string memory newMessage) external returns(string memory) {//функция для записи
         message = newMessage;
         return message;
     }
@@ -31,7 +33,7 @@ contract Demo {
     function getMessage() external view returns(string memory) {
         return message;
     }
-    function rate(uint amount) public pure returns(uint) {
+    function rate(uint amount) public pure returns(uint) {//функция для расчета
         return amount * 3;
     }
 }

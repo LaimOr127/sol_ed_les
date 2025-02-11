@@ -3,7 +3,7 @@ const Block = require('../Block');
 const assert = require('assert');
 
 describe('Blockchain', function() {
-    it('should have a genesis block', function() {
+    it('should have a genesis block', function() {//проверяем, что блокчейн существует
         const blockchain = new Blockchain();
         const genesisBlock = blockchain.chain[0];
         assert(genesisBlock, 'Could not find the genesis block!');

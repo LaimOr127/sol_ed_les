@@ -7,7 +7,7 @@ class Transaction {
     }
 
     execute() {
-        if (this.executed) {
+        if (this.executed) {//проверка на повторное выполнение
             throw new Error("Transaction has already been executed!");
         }
 
@@ -30,7 +30,7 @@ class Transaction {
             utxo.spend();
         }
 
-        this.executed = true;
+        this.executed = true;//транзакция выполнена
     }
 }
 

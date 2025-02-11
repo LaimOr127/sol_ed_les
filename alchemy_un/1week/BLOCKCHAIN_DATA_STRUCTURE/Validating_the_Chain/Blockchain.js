@@ -14,10 +14,10 @@ class Blockchain {
 
     isValid() {
         for (let i = 1; i < this.chain.length; i++) {
-            const currentBlock = this.chain[i];
+            const currentBlock = this.chain[i];//получаем текущий блок
             const previousBlock = this.chain[i - 1];
 
-            if (currentBlock.previousHash !== previousBlock.toHash()) {
+            if (currentBlock.previousHash !== previousBlock.toHash()) {//проверяем, что previousHash равен хэшу предыдущего блока
                 return false;
             }
         }

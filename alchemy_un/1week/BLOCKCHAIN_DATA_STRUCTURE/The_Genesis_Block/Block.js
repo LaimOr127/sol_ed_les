@@ -6,7 +6,7 @@ class Block {
     }
 
     toHash() {
-        return SHA256(this.data).toString();
+        return SHA256(this.data).toString();//возвращаем хэш
     }
 }
 
