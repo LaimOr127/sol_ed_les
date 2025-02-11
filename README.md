@@ -3,7 +3,7 @@
 
 - В папке " alchemy_un " разбито по неделям выполнение заданий с платформы https://university.alchemy.com курса Blockchain Storage
 
-- В папке " education_sol " подряд коды видео уроков от " Ilya Krukowski " с моими комментариями. В папке " tests " лежат тесты к контрактам. Ссылка на видеокурс: https://www.youtube.com/watch?v=8A8-7Ks26yY&list=PLWlFXymvoaJ_0ok740kLXTn5qn-i1UnYr&index=1&pp=iAQB
+- В папке " sol_ed " подряд коды видео уроков от " Ilya Krukowski " с моими комментариями. В папке " tests " лежат тесты к контрактам. Ссылка на видеокурс: https://www.youtube.com/watch?v=8A8-7Ks26yY&list=PLWlFXymvoaJ_0ok740kLXTn5qn-i1UnYr&index=1&pp=iAQB
 
 ### Краткое описания курса от " Alchemy University "
 
