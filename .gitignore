@@ -1,3 +1,2 @@
-node_modules
-.env
-.states
+node_modules/
+.states/
