@@ -12,7 +12,7 @@ describe("PaidContract", function () {
     paid_contract = await PaidContract.deploy()
     await paid_contract.deployed()
   })
-  
+
   async function sendMoney(sender) {
     const amount = 100
     const txData = {

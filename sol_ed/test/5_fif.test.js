@@ -11,11 +11,12 @@ describe("Payments", function () {
     const Payments = await ethers.getContractFactory("Payments", acc1);
     payments = await Payments.deploy();
     await payments.deployed(); //ждем завершения транзакции развертывания
-    console.log(payments.address);
+ 
   });
 
   it("should be deployed", async function () { //проверка на то что контракт развернут
-    expect(payments.address).to.be.properAddress;
+    expect(payments.target).to.be.properAddress; //ethers v5 --> ethers v6
+    console.log(payments.target);
   });
 
   it("should have 0 ether by default", async function(){ //проверка на то что контракт развернут
@@ -29,7 +30,10 @@ describe("Payments", function () {
     const tx = payments.connect(acc2).pay(msg, { value: sum }); //отправляем деньги
 
     await expect(() => tx) // анонимная функция
-      .to.changeEtherBalance([acc2, payments], [-sum, sum]);
+      .to.changeEtherBalance(
+        [acc2.address, payments.target], //ethers v5 --> ethers v6
+        [-sum, sum]
+      );
 
     await tx.wait();
 
