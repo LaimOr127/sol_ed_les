@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract Telephone",
+						"name": "_tel",
+						"type": "address"
+					}
+				],
+				"name": "hach",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Telephone.sol": "hack"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Telephone.sol": {
+			"keccak256": "0x65bc1f9fc065f23eeaa3485536262c47003dc098238034433e8135215d563f77",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b10ce4f77d2cafdf47afa62f35921f5ded42c7d0492e25f899d448fcdca54bef",
+				"dweb:/ipfs/QmZDu8W9B2tHT2eFKt2xQPjiCKu7a1P78hsZBoYWGnNhq2"
+			]
+		}
+	},
+	"version": 1
+}
