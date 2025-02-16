@@ -16,7 +16,7 @@ describe('donate', () => {
     it('should return an instance of Promise', () => {
         assert(donationPromise instanceof Promise);
     });
-    it('should increase the balance of each charity', async () => {
+    it('should increase the balance of each charity', async () => {//тест на увеличение баланса каждой благотворительной организации
         await donationPromise;
         for(let i = 0; i < charities.length; i++) {
             const charity = charities[i];

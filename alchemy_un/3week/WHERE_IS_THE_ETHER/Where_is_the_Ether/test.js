@@ -45,7 +45,7 @@ describe('findEther', () => {
         await mineBlock();
     });
 
-    it('should find all the addresses', async () => {
+    it('should find all the addresses', async () => {//тест на то, что функция findEther находит все адреса
         const actual = await findEther(FROM_ADDRESS);
         const err = `Sent ether to ${expected.length} addresses, you returned ${actual.length}`;
         assert.equal(actual.length, expected.length, err);

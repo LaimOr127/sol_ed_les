@@ -1,0 +1,59 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "getBalance",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ZOpenZep/Force.sol": "Force"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ZOpenZep/Force.sol": {
+			"keccak256": "0xbd95ee0751914323db1001bbaf5ef0ef3219b33af56a2d2de0c4ac650f9ca766",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4688489163546a204c517764f42cdd57028c896df8b905872c5000a71052962b",
+				"dweb:/ipfs/Qma2MhkEzzeEpCNYau79tQTv7cTr4naT6K74e2v4BuieEh"
+			]
+		}
+	},
+	"version": 1
+}

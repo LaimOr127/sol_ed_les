@@ -21,19 +21,19 @@ describe('signaturePromise', () => {
             parsed = utils.parseTransaction(hex);
         });
 
-        it('should contain the to address', () => {
+        it('should contain the to address', () => {//тест на наличие адреса назначения
             assert.equal(parsed.to, "0xdD0DC6FB59E100ee4fA9900c2088053bBe14DE92");
         });
 
-        it('should contain the value', () => {
+        it('should contain the value', () => {//тест на наличие значения
             assert.equal(parsed.value.toString(), "1000000000000000000");
         });
 
-        it('should have the appropriate gas limit for transfers', () => {
+        it('should have the appropriate gas limit for transfers', () => {//тест на наличие лимита газа
             assert(parsed.gasLimit.eq(21000), "The gas limit should be 21000");
         });
 
-        it('should derive the from address', () => {
+        it('should derive the from address', () => {//тест на наличие адреса отправителя
             assert.equal(parsed.from, "0x5409ED021D9299bf6814279A6A1411A7e866A631");
         });
     });

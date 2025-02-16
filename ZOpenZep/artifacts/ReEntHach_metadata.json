@@ -1,0 +1,82 @@
+{
+	"compiler": {
+		"version": "0.8.28+commit.7893614a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tmp_",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "donate",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "selfd",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"ZOpenZep/Re-entrancy.sol": "ReEntHach"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"ZOpenZep/Re-entrancy.sol": {
+			"keccak256": "0x796562fccbe6c521bbd95168c91817c814a7869ad2731fe9b025cf0605b692e9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://fffa31adc6d43cba0fe85cb804da21de0ff626ac59f2d6f3a7343047ea382159",
+				"dweb:/ipfs/Qmcx5A99ypBQjGnNtbLjWQJeMk4ojf8gm8YUVXGzgT3otU"
+			]
+		}
+	},
+	"version": 1
+}

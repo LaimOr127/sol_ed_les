@@ -15,7 +15,7 @@ describe('sendEther', () => {
         await sendEther(props);
     });
     
-    it('should have mined three blocks', async () => {
+    it('should have mined three blocks', async () => {//тест на то, что три блока были добыты
         const blockNumber = await provider.getBlockNumber();
         assert.equal(blockNumber, 3);
     });

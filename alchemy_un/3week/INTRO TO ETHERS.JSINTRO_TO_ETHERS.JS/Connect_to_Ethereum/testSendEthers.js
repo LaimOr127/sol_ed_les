@@ -12,13 +12,13 @@ describe('sendEther', () => {
             to: "0xdD0DC6FB59E100ee4fA9900c2088053bBe14DE92",
         });
     })
-    it('should resolve with a transaction', async () => {
+    it('should resolve with a transaction', async () => {//тест на то, что функция вернула транзакцию
         assert(tx, "The function did not resolve with a transaction. Did you return the transaction promise?")
         assert.equal(tx.to, "0xdD0DC6FB59E100ee4fA9900c2088053bBe14DE92");
         assert.equal(tx.from, "0x5409ED021D9299bf6814279A6A1411A7e866A631");
         assert(tx.hash);
     });
-    it('should get mined', async () => {
+    it('should get mined', async () => {//тест на то, что транзакция была добыта
         const receipt = await provider.waitForTransaction(tx.hash);
         assert(receipt);
         assert.equal(receipt.blockNumber, 1);

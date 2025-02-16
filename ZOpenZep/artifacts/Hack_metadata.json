@@ -8,14 +8,14 @@
 			{
 				"inputs": [
 					{
-						"internalType": "contract Telephone",
-						"name": "_tel",
+						"internalType": "address",
+						"name": "_king",
 						"type": "address"
 					}
 				],
-				"name": "hach",
+				"name": "hack",
 				"outputs": [],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			}
 		],
@@ -32,7 +32,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"Telephone.sol": "hack"
+			"ZOpenZep/King.sol": "Hack"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -46,12 +46,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"Telephone.sol": {
-			"keccak256": "0x65bc1f9fc065f23eeaa3485536262c47003dc098238034433e8135215d563f77",
+		"ZOpenZep/King.sol": {
+			"keccak256": "0xd71f279423f06a385f5337b23f787b1f0e4dbeab9edd2e834d4df9635607abf0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b10ce4f77d2cafdf47afa62f35921f5ded42c7d0492e25f899d448fcdca54bef",
-				"dweb:/ipfs/QmZDu8W9B2tHT2eFKt2xQPjiCKu7a1P78hsZBoYWGnNhq2"
+				"bzz-raw://ed41c4e989ec8f08289eb0a38b93cd7d2a53ddc5432ee71d53de7e074dfac587",
+				"dweb:/ipfs/QmaBCLsvB8MELWs9DZUVwsCL2y11LuV14cZysFtmM2dcuy"
 			]
 		}
 	},
